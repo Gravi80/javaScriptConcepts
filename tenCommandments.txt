@@ -1,0 +1,18 @@
+1). don't touch the DOM
+
+2). cache DOM refrences in local vars
+
+3). use selectors API
+
+4).cache the length when looping collections   => when u do documnet.getElementByTagName('tag')
+so when u loop through this collection if(i<collenction.length) here it will check the documnet length evry time.
+when u cache it before the loop it won't execute evry time
+
+5).update DOM offline => when u have bunch of DOM changes take ur element of the tree, change offline n then put it back in to the tree.
+Ex- if u have table with 100 rows u won't be adding one row then another row 2 the live document, u will create everything offline 
+
+6).Batch style changes => update the css class name instead of changing to many things
+
+7).Minimize reflow areas
+8).Use event delegation
+10).Don't touch the DOM

@@ -1,0 +1,13 @@
+Java Script Timers
+===================
+=> created using setTimeOut()
+=> Schedules a new JavaScript execution job for some time in the future
+=> when the delay is up, the job is added to the UI queue
+
+   -> Note : This does not gaurantee excution after the delay, just that job is added to 
+              the UI queue and will be excuted at appropriate time.
+
+=> set timeOut doesn't means execute this in 500ms or 400ms, it means add this job to UI tread after 500ms.
+
+=> for complex processing, split up into timed functionality
+=> use timers to delay some processing later 

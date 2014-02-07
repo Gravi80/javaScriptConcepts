@@ -1,0 +1,33 @@
+//BAD
+======
+we r accessing a DOM element and updating it's inner HTML,so v r touching it
+once to read the value and once to update the value.
+
+var count=0 
+for(;count<15000;count++){
+	documnet.getElementById('hello').innerHTML + = 'a';
+}
+
+DOM access = (1 get + 1 set) * 15000
+-----------
+
+
+//BETTER WAY
+=============
+
+var count=0, content='';
+for(;count<15000;count+=1){
+	content+='a';
+}
+
+documnet.getElementById('hello').innerHTML+=content
+
+DOM access = (1 get + 1 set)
+-----------
+
+
+
+tools
+-------
+Dynatrace
+speed tracer

@@ -1,0 +1,67 @@
+UI Thread
+==========
+
+=> Two Jobs
+   ---------
+	* draw UI updates 
+	* execute JavaScript
+
+=> Only one job can happen at a time
+
+=> Jobs are added to a queue if they are generated while UI thread is busy.
+
+
+
+when u click a button
+-----------------------
+there are couples of UI updates goig on
+
+when u hit the button down the button actually goes down
+when u release it, it comes back up.So, it's 2 draw operations.  
+
+=> A button UI change job is created 
+	-> draw the button in the down state
+
+=> A JavaScript execution job is created 
+	-> the onClick event handler
+
+=> A button UI change job is created 
+	-> draw the button in the up state
+
+So, there are three jobs ends up getting generated when u click on a button
+these jobs go into the queue and then they start getting executed.
+SO,
+1).draw the button in the down state,
+2).the onClick event handler executes the javaScript
+3).draw the button in the up state
+
+then after that waiting for more jobs 2 come in.
+
+
+
+when u say set time out then u say add this job 2 the queue after this much milliseconds.
+so when u say setTimeOut(5), u say add this job 2 the queue after 5 milliseconds.
+
+
+
+NO UI UPDATES WHILE JAVASCRIPT IS EXECUTING
+============================================
+Why ? -> javascript may cause UI update
+
+
+Long-running JavaScript = 	Unresponsive UI
+
+u can run the example.html file 
+once u click on btn1 ur whole app becomes unresponsive bcz javascript thread is running. 
+
+
+
+Runaway Script Timer
+=====================
+prevents u to write code which takes so long 2 execute
+
+* two types of limits:
+	- Execution time -> total amount of time that a UI thread has spend excuting a single 						javaScript Job.
+	- Number Of statements -> total number of statements being excuted in javascripts
+	
+go to javaScript timers.txt
