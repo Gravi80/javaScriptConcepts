@@ -23,9 +23,10 @@ var singleton = function () {
 Import mixins
 -------------
 This variation of the pattern demonstrates how globals (e.g jQuery, Underscore) can be passed in as arguments 
-to our module's anonymous function. This effectively allows us to import them and locally alias them as we wish.
+to our modules anonymous function. This effectively allows us to import them and locally alias them as we wish.
 
-// Global module
+/* Global module */
+
 var myModule = (function ( jQ, _ ) {
  
     function privateMethod1(){
