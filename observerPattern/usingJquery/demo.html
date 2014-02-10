@@ -1,0 +1,38 @@
+<html>
+<head>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style>
+		#btn1{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h3>Click on button 2 to affect button 1<h3>
+   <button id="btn1">Button 1</button>
+   <button id="btn2">Button 2</button>
+  
+  <script type="text/javascript">
+  		$.fn.observe = function(eventName, callback) {
+    		return this.each(function(){
+        		var el = this;
+        		$(document).on(eventName, function(){
+            		callback.apply(el, arguments);
+        	})
+    });
+}
+
+
+
+$('#btn2').on('click', function(e) {
+    $(this).trigger('custom');
+});
+
+$('#btn1').observe('custom', function(e) {
+    $(this).css('color', 'green');
+});
+
+
+  </script>
+</body>
+</html>
