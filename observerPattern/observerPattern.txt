@@ -8,3 +8,21 @@ When we no longer wish for a particular observer to be notified of changes by th
 When something changes in our subject that the observer may be interested in, a notify message is sent which calls the update method in each observer. 
 When the observer is no longer interested in the subject's state, they can simply detach themselves."
 
+
+Participants
+--------------
+
+The objects participating in this pattern are:
+
+	Subject --
+	=======
+		1).maintains list of observers. Any number of Observer objects may observe a Subject
+		2).implements an interface that lets observer objects subscribe or unsubscribe
+		3).sends a notification to its observers when its state changes
+
+	Observers -- 
+	=========
+		1).has a function signature that can be invoked when Subject changes (i.e. event occurs)
+
+
+check observerPattern folder.		
